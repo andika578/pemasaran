@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DHOLPIN — Jasa Undangan Web Digital & Creative Photography Studio</title>
+  <meta name="description" content="DHOLPIN menyediakan jasa pembuatan undangan digital pernikahan & ulang tahun full custom serta jasa fotografi profesional wisuda, pernikahan, dan birthday party.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+
+  <!-- Google Fonts: Playfair Display, Plus Jakarta Sans, Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dholpin: {
+              cream: '#FAF7F2',
+              surface: '#FFFFFF',
+              sand: '#F3EDE2',
+              gold: '#C29D59',
+              goldLight: '#E8D19F',
+              goldDark: '#8F6C2C',
+              terracotta: '#C86D51',
+              charcoal: '#1C1917',
+              muted: '#78716C',
+              border: '#EAE3D6'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+            cormorant: ['"Cormorant Garamond"', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="bg-dholpin-cream text-dholpin-charcoal antialiased selection:bg-dholpin-goldLight selection:text-dholpin-charcoal">
+
+  <!-- Top Announcement Bar -->
+  <aside aria-label="Announcement" class="bg-gradient-to-r from-stone-900 via-stone-800 to-stone-900 text-stone-200 text-xs py-2 px-4 text-center border-b border-stone-800">
+    <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 font-medium">
+      <span class="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+      <span class="inline-flex items-center gap-1.5 text-amber-300 font-semibold"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-400"></i> Slot Terbatas Setiap Bulannya!</span>
+      <span class="text-stone-300 hidden sm:inline">Yuk amankan tanggalmu sekarang sebelum penuh.</span>
+      <a href="https://wa.me/6285708454528?text=Halo%20DOLPHIN,%20saya%20ingin%20amankan%20slot%20acara%20saya" target="_blank" class="ml-2 text-dholpin-gold underline hover:text-white transition inline-flex items-center gap-1">
+        Book via WA <i data-lucide="arrow-right" class="w-3 h-3"></i>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Floating Sticky Action Buttons (Desktop & Mobile) -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+    <!-- WhatsApp Floating Action -->
+    <a href="https://wa.me/6285708454528?text=Halo%20DOLPHIN,%20saya%20mau%20tanya%20paket%20undangan%20digital%20dan%20fotografi" target="_blank" class="group flex items-center gap-3 bg-gradient-to-r from-emerald-600 to-green-600 hover:opacity-95 text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 border border-emerald-400/40">
+      <div class="relative flex items-center justify-center">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.828zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.174L2 22l4.981-1.396A9.94 9.94 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.637 0-3.155-.494-4.428-1.341l-.317-.213-2.973.833.823-2.906-.232-.338C3.967 14.898 3.5 13.504 3.5 12c0-4.687 3.813-8.5 8.5-8.5s8.5 3.813 8.5 8.5-3.813 8.5-8.5 8.5z"/>
+        </svg>
+        <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-green-300 rounded-full animate-ping"></span>
+      </div>
+      <span class="text-sm font-semibold tracking-wide pr-1 hidden sm:inline">Chat WA 0857-0845-4528</span>
+    </a>
+
+    <!-- Instagram Floating Action -->
+    <a href="https://instagram.com/dolphin.dois" target="_blank" class="flex items-center gap-3 bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 hover:opacity-95 text-white px-4 py-3 rounded-full shadow-2xl transition-all duration-300 hover:scale-105 border border-white/30">
+      <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      </svg>
+      <span class="text-sm font-semibold tracking-wide pr-1 hidden sm:inline">DM @dolphin.dois</span>
+    </a>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="sticky top-0 z-40 w-full glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-3.5 flex items-center justify-between">
+      <!-- Brand Logo with Precise Official Store Emblem -->
+      <a href="#beranda" class="flex items-center gap-3 group">
+        <div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-amber-500/50 shadow-md group-hover:scale-105 transition-transform bg-[#FAF7F2] shrink-0 p-1 flex items-center justify-center">
+          <img src="assets/logo-emblem.png" alt="DOLPHIN Logo" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <span class="font-serif text-2xl font-bold tracking-wider text-dholpin-charcoal leading-none block">DOLPHIN</span>
+          <span class="block text-[9px] uppercase tracking-widest text-dholpin-gold font-bold mt-1">Digital Invitations & Photography</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu with Smooth Sliding Active Pill Indicator -->
+      <nav id="desktop-nav" class="relative hidden md:flex items-center gap-1 p-1.5 rounded-full bg-stone-200/60 border border-stone-300/60 backdrop-blur-md shadow-inner">
+        <!-- Floating Active Pill Background Indicator -->
+        <div id="nav-active-pill" class="absolute h-[calc(100%-12px)] rounded-full bg-stone-900 pointer-events-none opacity-0 shadow-md"></div>
+
+        <a href="#beranda" class="nav-link relative z-10 px-3.5 py-1.5 text-xs font-semibold rounded-full text-stone-600 hover:text-stone-950 flex items-center gap-1.5" data-section="beranda">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-amber-400 opacity-0"></span>
+          Beranda
+        </a>
+        <a href="#tentang" class="nav-link relative z-10 px-3.5 py-1.5 text-xs font-semibold rounded-full text-stone-600 hover:text-stone-950 flex items-center gap-1.5" data-section="tentang">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-amber-400 opacity-0"></span>
+          Tentang
+        </a>
+        <a href="#undangan-digital" class="nav-link relative z-10 px-3.5 py-1.5 text-xs font-semibold rounded-full text-stone-600 hover:text-stone-950 flex items-center gap-1.5" data-section="undangan-digital">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-amber-400 opacity-0"></span>
+          Undangan Web
+        </a>
+        <a href="#fotografi" class="nav-link relative z-10 px-3.5 py-1.5 text-xs font-semibold rounded-full text-stone-600 hover:text-stone-950 flex items-center gap-1.5" data-section="fotografi">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-amber-400 opacity-0"></span>
+          Fotografi
+        </a>
+        <a href="#pricelist" class="nav-link relative z-10 px-3.5 py-1.5 text-xs font-semibold rounded-full text-stone-600 hover:text-stone-950 flex items-center gap-1.5" data-section="pricelist">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-amber-400 opacity-0"></span>
+          Pricelist
+        </a>
+        <a href="#faq" class="nav-link relative z-10 px-3.5 py-1.5 text-xs font-semibold rounded-full text-stone-600 hover:text-stone-950 flex items-center gap-1.5" data-section="faq">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-amber-400 opacity-0"></span>
+          FAQ
+        </a>
+        <a href="#kontak" class="nav-link relative z-10 px-3.5 py-1.5 text-xs font-semibold rounded-full text-stone-600 hover:text-stone-950 flex items-center gap-1.5" data-section="kontak">
+          <span class="nav-dot w-1.5 h-1.5 rounded-full bg-amber-400 opacity-0"></span>
+          Kontak
+        </a>
+      </nav>
+
+      <!-- Header CTAs -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="https://instagram.com/dolphin.dois" target="_blank" class="text-xs font-semibold text-stone-700 hover:text-stone-950 flex items-center gap-2 transition group">
+          <div class="w-6 h-6 rounded-lg bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-xs group-hover:scale-105 transition-transform">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+          <span>@dolphin.dois</span>
+        </a>
+        <a href="https://wa.me/6285708454528?text=Halo%20DOLPHIN,%20saya%20mau%20konsultasi%20project%20acara%20saya" target="_blank" class="bg-dholpin-charcoal hover:bg-stone-800 text-dholpin-goldLight px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide shadow-md transition hover:scale-105">
+          Konsultasi Gratis
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg text-stone-800 hover:bg-stone-200/50" aria-label="Buka Menu">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-nav" class="fixed inset-0 z-50 bg-stone-950/70 backdrop-blur-md transform translate-x-full transition-transform duration-300 md:hidden flex justify-end">
+    <div class="w-4/5 max-w-sm bg-dholpin-cream h-full p-8 flex flex-col justify-between shadow-2xl">
+      <div>
+        <div class="flex items-center justify-between pb-6 border-b border-stone-200">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full overflow-hidden border-2 border-dholpin-gold/60 shadow-sm bg-[#FAF7F2] shrink-0 p-1 flex items-center justify-center">
+              <img src="assets/logo-emblem.png" alt="DOLPHIN Logo" class="w-full h-full object-contain">
+            </div>
+            <div>
+              <span class="font-serif text-xl font-bold tracking-wider text-dholpin-charcoal leading-none block">DOLPHIN</span>
+              <span class="block text-[8px] uppercase tracking-widest text-dholpin-gold font-bold mt-1">Digital Invitations & Photography</span>
+            </div>
+          </div>
+          <button id="mobile-menu-close" class="p-2 text-stone-600 hover:text-stone-900" aria-label="Tutup Menu">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-2 mt-6 text-sm font-medium">
+          <a href="#beranda" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-2xl text-stone-700 font-semibold text-xs border border-transparent" data-section="beranda">
+            <span>Beranda</span>
+            <span class="mobile-active-badge hidden text-[10px] uppercase font-bold text-amber-300 bg-stone-950 px-2.5 py-0.5 rounded-full border border-amber-400/30">Aktif ●</span>
+          </a>
+          <a href="#tentang" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-2xl text-stone-700 font-semibold text-xs border border-transparent" data-section="tentang">
+            <span>Tentang Kami</span>
+            <span class="mobile-active-badge hidden text-[10px] uppercase font-bold text-amber-300 bg-stone-950 px-2.5 py-0.5 rounded-full border border-amber-400/30">Aktif ●</span>
+          </a>
+          <a href="#undangan-digital" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-2xl text-stone-700 font-semibold text-xs border border-transparent" data-section="undangan-digital">
+            <span>Undangan Web Digital</span>
+            <span class="mobile-active-badge hidden text-[10px] uppercase font-bold text-amber-300 bg-stone-950 px-2.5 py-0.5 rounded-full border border-amber-400/30">Aktif ●</span>
+          </a>
+          <a href="#fotografi" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-2xl text-stone-700 font-semibold text-xs border border-transparent" data-section="fotografi">
+            <span>Layanan Fotografi & Galeri</span>
+            <span class="mobile-active-badge hidden text-[10px] uppercase font-bold text-amber-300 bg-stone-950 px-2.5 py-0.5 rounded-full border border-amber-400/30">Aktif ●</span>
+          </a>
+          <a href="#pricelist" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-2xl text-stone-700 font-semibold text-xs border border-transparent" data-section="pricelist">
+            <span>Pricelist Lengkap</span>
+            <span class="mobile-active-badge hidden text-[10px] uppercase font-bold text-amber-300 bg-stone-950 px-2.5 py-0.5 rounded-full border border-amber-400/30">Aktif ●</span>
+          </a>
+          <a href="#faq" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-2xl text-stone-700 font-semibold text-xs border border-transparent" data-section="faq">
+            <span>Tanya Jawab (FAQ)</span>
+            <span class="mobile-active-badge hidden text-[10px] uppercase font-bold text-amber-300 bg-stone-950 px-2.5 py-0.5 rounded-full border border-amber-400/30">Aktif ●</span>
+          </a>
+          <a href="#kontak" class="mobile-nav-link flex items-center justify-between px-4 py-3 rounded-2xl text-stone-700 font-semibold text-xs border border-transparent" data-section="kontak">
+            <span>Kontak & Booking</span>
+            <span class="mobile-active-badge hidden text-[10px] uppercase font-bold text-amber-300 bg-stone-950 px-2.5 py-0.5 rounded-full border border-amber-400/30">Aktif ●</span>
+          </a>
+        </nav>
+      </div>
+      <div class="flex flex-col gap-3 pt-6 border-t border-stone-200">
+        <a href="https://instagram.com/dolphin.dois" target="_blank" class="flex items-center justify-center gap-2 bg-stone-100 hover:bg-stone-200 py-3 rounded-xl text-xs font-semibold text-stone-800 transition">
+          <i data-lucide="instagram" class="w-4 h-4 text-pink-600"></i>
+          Instagram @dolphin.dois
+        </a>
+        <a href="https://wa.me/6285708454528" target="_blank" class="flex items-center justify-center gap-2 bg-dholpin-charcoal text-dholpin-goldLight py-3 rounded-xl text-xs font-semibold tracking-wide transition">
+          <i data-lucide="message-circle" class="w-4 h-4 text-emerald-400"></i>
+          WhatsApp 0857-0845-4528
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section id="beranda" class="relative pt-12 pb-24 md:pt-20 md:pb-32 overflow-hidden noise-texture">
+    <!-- Atmospheric Ambient Glows -->
+    <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-amber-200/40 via-rose-200/30 to-amber-100/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+    <div class="absolute -top-20 -left-20 w-72 h-72 bg-amber-100/50 rounded-full blur-2xl pointer-events-none -z-10"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Category Badge -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stone-200/70 border border-stone-300/80 text-xs font-medium text-stone-800 pulse-badge">
+            <span class="w-2 h-2 rounded-full bg-dholpin-gold"></span>
+            <span>Digital Web Invitation & Portrait Photography Studio</span>
+          </div>
+
+          <!-- Headline with GSAP Word-by-Word Reveal -->
+          <h1 class="split-words font-serif text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-dholpin-charcoal leading-[1.18]">
+            Abadikan Momen Spesialmu dalam Karya Digital & Potret Abadi
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="text-base sm:text-lg text-stone-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+            Solusi praktis & estetik dari <strong>DHOLPIN</strong> untuk momen berhargamu: mulai dari <strong>Undangan Web Digital interaktif custom</strong> (pernikahan & ulang tahun) hingga <strong>Jasa Fotografi profesional</strong> (wisuda, pernikahan, & birthday). Harga ramah kantong, hasil mewah!
+          </p>
+
+          <!-- Key Highlights / Pill Tags -->
+          <div class="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1 text-xs text-stone-600">
+            <span class="px-3 py-1 bg-white/80 border border-stone-200 rounded-lg shadow-sm flex items-center gap-1.5">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600"></i> Undangan Siap Online Cepat
+            </span>
+            <span class="px-3 py-1 bg-white/80 border border-stone-200 rounded-lg shadow-sm flex items-center gap-1.5">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600"></i> Desain 100% Bisa Custom
+            </span>
+            <span class="px-3 py-1 bg-white/80 border border-stone-200 rounded-lg shadow-sm flex items-center gap-1.5">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600"></i> Tone Warna Aesthetic Pinterest
+            </span>
+            <span class="px-3 py-1 bg-white/80 border border-stone-200 rounded-lg shadow-sm flex items-center gap-1.5">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600"></i> Mulai 150K Saja
+            </span>
+          </div>
+
+          <!-- CTAs Button Group -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            <a href="#pricelist" class="w-full sm:w-auto text-center bg-dholpin-charcoal hover:bg-stone-800 text-dholpin-goldLight px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-0.5">
+              Lihat Pricelist & Paket
+            </a>
+            
+            <button class="open-invitation-sim w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white/90 hover:bg-stone-100 text-stone-800 border border-stone-300 px-7 py-3.5 rounded-full font-semibold text-sm tracking-wide shadow-sm transition-all duration-300 hover:-translate-y-0.5">
+              <i data-lucide="smartphone" class="w-4 h-4 text-dholpin-gold"></i>
+              Simulasi Undangan Web
+            </button>
+          </div>
+
+          <!-- Trust Proof / Urgent Slot Reminder -->
+          <div class="pt-2 flex items-center justify-center lg:justify-start gap-4 text-xs text-stone-500">
+            <div class="flex -space-x-2">
+              <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="assets/images/portfolio-wisuda-2.jpg" alt="Client 1">
+              <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="assets/images/hero-invite.jpg" alt="Client 2">
+              <img class="inline-block h-8 w-8 rounded-full ring-2 ring-white object-cover" src="assets/images/portfolio-birthday-1.jpg" alt="Client 3">
+            </div>
+            <p><strong>50+ Momen</strong> telah dirayakan & diabadikan bersama DHOLPIN.</p>
+          </div>
+
+        </div>
+
+        <!-- Right Hero Visual Grid (Collage Mockup) -->
+        <div class="lg:col-span-5 relative hero-visual-entrance">
+          <div class="relative mx-auto max-w-sm sm:max-w-md">
+            
+            <!-- Main Mockup: Mobile Digital Invitation Demo -->
+            <div class="frame-box-interactive relative z-20 w-64 sm:w-72 mx-auto rounded-[38px] p-3 bg-stone-900 shadow-2xl ring-1 ring-stone-700/50 border-4 border-stone-800 transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+              <div class="overflow-hidden rounded-[28px] bg-stone-900 aspect-[9/18] relative">
+                <!-- Phone Screen Content -->
+                <img src="assets/images/hero-invite.jpg" alt="Undangan Digital DOLPHIN" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+                
+                <div class="absolute top-4 left-0 right-0 text-center">
+                  <span class="text-[10px] uppercase tracking-widest text-dholpin-goldLight font-medium">The Wedding Celebration</span>
+                </div>
+
+                <div class="absolute bottom-6 left-4 right-4 text-center text-white space-y-2">
+                  <p class="font-cormorant italic text-xs text-amber-200">Save the Date</p>
+                  <h4 class="font-serif text-lg font-bold">Rian & Clarissa</h4>
+                  <p class="text-[11px] text-stone-300">Sabtu, 28 Desember 2026</p>
+                  
+                  <div class="pt-2">
+                    <button class="open-invitation-sim w-full py-2 bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-500 hover:to-amber-600 rounded-xl text-[11px] font-semibold tracking-wide text-white shadow-lg transition flex items-center justify-center gap-1.5">
+                      <span>Buka Undangan</span>
+                      <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-200"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Side Card 1: Photography Portrait Sample (Graduation / Wisuda) -->
+            <div class="frame-box-interactive absolute -top-6 -right-4 sm:-right-8 z-30 w-44 sm:w-48 p-2.5 rounded-2xl glass-card shadow-xl border border-white/80 transform rotate-[6deg] hover:rotate-2 transition-transform duration-300 animate-float">
+              <div class="aspect-[4/5] rounded-xl overflow-hidden mb-2">
+                <img src="assets/images/hero-grad.jpg" alt="Graduation Photography" class="w-full h-full object-cover">
+              </div>
+              <div class="flex items-center justify-between text-[11px]">
+                <span class="font-semibold text-stone-800">Wisuda Aesthetic</span>
+                <span class="text-amber-700 font-bold">150K</span>
+              </div>
+            </div>
+
+            <!-- Side Card 2: Photography Portrait Sample (Wedding / Prewed) -->
+            <div class="frame-box-interactive absolute -bottom-8 -left-4 sm:-left-8 z-30 w-44 sm:w-48 p-2.5 rounded-2xl glass-card shadow-xl border border-white/80 transform rotate-[-6deg] hover:rotate-0 transition-transform duration-300">
+              <div class="aspect-[4/5] rounded-xl overflow-hidden mb-2">
+                <img src="assets/images/hero-wedding.jpg" alt="Wedding Photography" class="w-full h-full object-cover">
+              </div>
+              <div class="flex items-center justify-between text-[11px]">
+                <span class="font-semibold text-stone-800">Wedding Shoot</span>
+                <span class="text-amber-700 font-bold">300K</span>
+              </div>
+            </div>
+                <span class="text-amber-700 font-bold">300K</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK SERVICES HIGHLIGHT SECTION -->
+  <section id="tentang" class="py-20 bg-dholpin-sand/50 border-y border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <!-- Official Logo Seal Emblem (100% Mathematically Centered) -->
+        <div class="w-24 h-24 mx-auto rounded-full p-1.5 bg-[#FAF7F2] border-2 border-amber-400/70 shadow-xl mb-3 hover:scale-105 transition-transform duration-300 flex items-center justify-center">
+          <img src="assets/logo-emblem.png" alt="DOLPHIN Studio Emblem" class="w-full h-full object-contain">
+        </div>
+        <span class="text-xs font-bold uppercase tracking-widest text-dholpin-gold">Kenapa Memilih DOLPHIN?</span>
+        <h2 class="split-words font-serif text-3xl sm:text-4xl font-bold text-dholpin-charcoal">
+          Kombinasi Sempurna Desain Modern & Dokumentasi Berjiwa Seni
+        </h2>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          Kami memahami setiap momen besar dalam hidupmu hanya terjadi sekali. Karena itu, <strong>DOLPHIN</strong> hadir dengan 2 pilar layanan unggulan untuk memastikan perayaanmu berkesan dan abadi selamanya.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 fade-stagger-parent">
+        
+        <!-- Pillar 1 -->
+        <div class="fade-card frame-box-interactive bg-white p-7 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition group">
+          <div class="w-12 h-12 rounded-xl bg-amber-50 text-dholpin-goldDark flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="globe" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Siap Online & Responsif</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Undangan web digital dapat diakses lancar di smartphone, tablet, maupun laptop dengan loading secepat kilat.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="fade-card frame-box-interactive bg-white p-7 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition group">
+          <div class="w-12 h-12 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="palette" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Desain Full Custom</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Bebas sesuaikan palet warna, ornamen, tema bunga, font, hingga layout sesuai konsep impian pernikahan atau ultahmu.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="fade-card frame-box-interactive bg-white p-7 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition group">
+          <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="camera" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Tone Warna Pinterest</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Color grading foto bernuansa hangat, vintage editorial, dan natural candid yang sangat cocok diunggah ke Instagram.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="fade-card frame-box-interactive bg-white p-7 rounded-2xl border border-stone-200/80 shadow-sm hover:shadow-md transition group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
+            <i data-lucide="sparkles" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-serif text-lg font-bold text-stone-900 mb-2">Harga Sangat Terjangkau</h3>
+          <p class="text-xs text-stone-600 leading-relaxed">
+            Kualitas studio premium mulai Rp 150K! Mahasiswa wisuda, calon pengantin, atau birthday party bisa hemat maksimal.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICE 1: UNDANGAN WEB DIGITAL -->
+  <section id="undangan-digital" class="py-24">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Feature Description -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100/70 border border-amber-200 text-xs font-semibold text-amber-900">
+            <i data-lucide="mail-open" class="w-3.5 h-3.5"></i> Jasa Undangan Web Digital
+          </div>
+          
+          <h2 class="split-words font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 leading-tight">
+            Undangan Digital Modern, Praktis, & Elegan Sekali Klik
+          </h2>
+
+          <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+            Bagikan kabar bahagiamu ke kerabat, sahabat, dan keluarga besar dengan satu link eksklusif. Tidak perlu cetak ribet dan boros kertas! Dilengkapi fitur canggih interaktif yang membuat tamu undangan terpukau.
+          </p>
+
+          <!-- Feature Grid Icons -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-stone-200/80">
+              <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-800 flex items-center justify-center shrink-0">
+                <i data-lucide="music" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-stone-800">Background Music</h4>
+                <p class="text-[11px] text-stone-500">Lagu romantis favoritmu yang berputar otomatis.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-stone-200/80">
+              <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-800 flex items-center justify-center shrink-0">
+                <i data-lucide="calendar" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-stone-800">Countdown Timer</h4>
+                <p class="text-[11px] text-stone-500">Hitung mundur otomatis menuju hari H acara.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-stone-200/80">
+              <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-800 flex items-center justify-center shrink-0">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-stone-800">Navigasi Google Maps</h4>
+                <p class="text-[11px] text-stone-500">Petunjuk rute langsung ke lokasi tanpa tersesat.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-stone-200/80">
+              <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-800 flex items-center justify-center shrink-0">
+                <i data-lucide="credit-card" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-stone-800">Amplop Digital & QR</h4>
+                <p class="text-[11px] text-stone-500">Kirim kado cashless mudah via rekening / QRIS.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-stone-200/80">
+              <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-800 flex items-center justify-center shrink-0">
+                <i data-lucide="user-check" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-stone-800">RSVP & Buku Tamu</h4>
+                <p class="text-[11px] text-stone-500">Konfirmasi kehadiran & ucapan doa online.</p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-white border border-stone-200/80">
+              <div class="w-8 h-8 rounded-lg bg-amber-50 text-amber-800 flex items-center justify-center shrink-0">
+                <i data-lucide="image" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-stone-800">Galeri Foto & Video</h4>
+                <p class="text-[11px] text-stone-500">Tampilkan momen prewedding atau kilas balik.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="pt-4 flex flex-wrap gap-4 items-center">
+            <button class="open-invitation-sim bg-dholpin-charcoal hover:bg-stone-800 text-dholpin-goldLight px-6 py-3 rounded-full text-xs font-semibold tracking-wide shadow-md flex items-center gap-2 transition hover:scale-105">
+              <i data-lucide="play" class="w-4 h-4"></i> Coba Demo Interaktif
+            </button>
+            <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20tertarik%20dengan%20Jasa%20Undangan%20Web%20Digital" target="_blank" class="text-xs font-semibold text-stone-800 hover:text-dholpin-gold flex items-center gap-1.5 transition">
+              Konsultasi Desain via WA &rarr;
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Right: Interactive Invitation Showcase Cards -->
+        <div class="lg:col-span-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <!-- Template 1: Wedding Aesthetic -->
+            <div class="portfolio-card frame-box-interactive bg-white p-4 rounded-3xl border border-stone-200/90 shadow-md group cursor-pointer open-invitation-sim">
+              <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-stone-100 mb-4">
+                <img src="assets/images/invite-wedding.jpg" alt="Wedding Template" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-black/20"></div>
+                <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-stone-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Pernikahan</span>
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                  <p class="font-cormorant italic text-xs text-amber-200">Exclusive Floral</p>
+                  <h4 class="font-serif text-lg font-bold">Dimas & Anisa</h4>
+                  <p class="text-[11px] text-stone-300">Live Web Invitation</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between px-2">
+                <div>
+                  <span class="text-xs font-bold text-stone-800">Pilihan Template</span>
+                  <p class="text-[11px] text-stone-500">Mulai 150K</p>
+                </div>
+                <span class="text-xs font-semibold text-dholpin-gold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  Preview <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+
+            <!-- Template 2: Birthday Celebration -->
+            <div class="portfolio-card frame-box-interactive bg-white p-4 rounded-3xl border border-stone-200/90 shadow-md group cursor-pointer open-invitation-sim">
+              <div class="relative aspect-[9/16] rounded-2xl overflow-hidden bg-stone-100 mb-4">
+                <img src="assets/images/invite-birthday.jpg" alt="Birthday Template" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-black/20"></div>
+                <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm text-stone-900 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Ulang Tahun</span>
+                <div class="absolute bottom-4 left-4 right-4 text-white">
+                  <p class="font-cormorant italic text-xs text-amber-200">Sweet Seventeen / Party</p>
+                  <h4 class="font-serif text-lg font-bold">Nabila's 21st Party</h4>
+                  <p class="text-[11px] text-stone-300">Live Web Invitation</p>
+                </div>
+              </div>
+              <div class="flex items-center justify-between px-2">
+                <div>
+                  <span class="text-xs font-bold text-stone-800">Desain Full Custom</span>
+                  <p class="text-[11px] text-stone-500">Hanya 200K</p>
+                </div>
+                <span class="text-xs font-semibold text-dholpin-gold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                  Preview <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICE 2: JASA FOTOGRAFI PROFESIONAL & GALERI KARYA -->
+  <section id="fotografi" class="py-24 bg-dholpin-sand/40 border-y border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-100/80 border border-rose-200 text-xs font-semibold text-rose-900">
+          <i data-lucide="camera" class="w-3.5 h-3.5"></i> Jasa Fotografi Profesional & Dokumentasi Acara
+        </div>
+        
+        <h2 class="split-words font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 leading-tight">
+          Sentuhan Potret Bernuansa Hangat, Alami, & Penuh Cerita
+        </h2>
+
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          Bukan sekadar jepretan biasa, DHOLPIN mengabadikan emosi dan kegembiraan di setiap sudut perayaanmu dengan pewarnaan aesthetic bergaya Pinterest editorial, bimbingan pose anti-kaku, dan hasil jernih beresolusi tinggi.
+        </p>
+      </div>
+
+      <!-- Photography 3 Categories Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-stagger-parent mb-20">
+        
+        <!-- Category 1: Wedding -->
+        <div class="fade-card frame-box-interactive bg-white rounded-3xl overflow-hidden border border-stone-200/90 shadow-md group hover:shadow-xl transition flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="assets/images/wedding-package.jpg" alt="Wedding Photography" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-amber-200 text-xs font-semibold px-3 py-1 rounded-full">
+                Wedding / Pernikahan
+              </span>
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex items-baseline justify-between">
+                <h3 class="font-serif text-xl font-bold text-stone-900">Paket Wedding</h3>
+                <span class="text-lg font-bold text-amber-700">300K</span>
+              </div>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Liputan intimate wedding, akad nikah, atau resepsi. Menangkap detil gaun, riasan, tatapan haru, hingga kehangatan keluarga.
+              </p>
+              <ul class="space-y-2 pt-2 text-xs text-stone-600">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Dokumentasi intimate & resepsi
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> All softcopy via Google Drive
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Edited aesthetic highlights
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20mau%20booking%20Paket%20Fotografi%20Wedding%20(300K)" target="_blank" class="block w-full py-2.5 text-center bg-stone-100 hover:bg-stone-900 hover:text-white rounded-xl text-xs font-semibold tracking-wide transition">
+              Book Paket Wedding &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Category 2: Graduation -->
+        <div class="fade-card frame-box-interactive bg-white rounded-3xl overflow-hidden border border-stone-200/90 shadow-md group hover:shadow-xl transition flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="assets/images/graduation-package.jpg" alt="Graduation Photography" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-amber-200 text-xs font-semibold px-3 py-1 rounded-full">
+                Graduation / Wisuda
+              </span>
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex items-baseline justify-between">
+                <h3 class="font-serif text-xl font-bold text-stone-900">Paket Wisuda</h3>
+                <span class="text-lg font-bold text-amber-700">150K / 250K</span>
+              </div>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Rayakan kelulusan bersama keluarga, pasangan, & bestie. Pengarahan pose ramah, aesthetic, dan tidak kaku!
+              </p>
+              <ul class="space-y-2 pt-2 text-xs text-stone-600">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Pilihan 30 Menit (150K)
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Pilihan 60 Menit (250K) Lebih Puas
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Free arahan pose & multi-spot
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20mau%20booking%20Paket%20Fotografi%20Wisuda" target="_blank" class="block w-full py-2.5 text-center bg-stone-100 hover:bg-stone-900 hover:text-white rounded-xl text-xs font-semibold tracking-wide transition">
+              Book Paket Wisuda &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Category 3: Birthday -->
+        <div class="fade-card frame-box-interactive bg-white rounded-3xl overflow-hidden border border-stone-200/90 shadow-md group hover:shadow-xl transition flex flex-col justify-between">
+          <div>
+            <div class="relative aspect-[4/3] overflow-hidden">
+              <img src="assets/images/birthday-package.jpg" alt="Birthday Photography" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <span class="absolute top-4 left-4 bg-stone-900/80 backdrop-blur-md text-amber-200 text-xs font-semibold px-3 py-1 rounded-full">
+                Birthday / Ulang Tahun
+              </span>
+            </div>
+            <div class="p-6 space-y-3">
+              <div class="flex items-baseline justify-between">
+                <h3 class="font-serif text-xl font-bold text-stone-900">Paket Ulang Tahun</h3>
+                <span class="text-lg font-bold text-amber-700">250K</span>
+              </div>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Momen tiup lilin, candid keceriaan tamu, dan foto grup seru dengan tone warna warm golden yang memikat.
+              </p>
+              <ul class="space-y-2 pt-2 text-xs text-stone-600">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Liputan seluruh rangkaian pesta
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> All original photos + edited highlights
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-emerald-600"></i> Pengiriman cepat Google Drive
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="p-6 pt-0">
+            <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20mau%20booking%20Paket%20Fotografi%20Birthday%20(250K)" target="_blank" class="block w-full py-2.5 text-center bg-stone-100 hover:bg-stone-900 hover:text-white rounded-xl text-xs font-semibold tracking-wide transition">
+              Book Paket Birthday &rarr;
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- WORKFLOW / ALUR KERJA PEMOTRETAN -->
+      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-stone-200/90 shadow-sm mb-20">
+        <div class="max-w-2xl mx-auto text-center space-y-3 mb-12">
+          <span class="text-xs font-bold uppercase tracking-widest text-dholpin-gold">Langkah Pemesanan Mudah</span>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Bagaimana Alur Sesi Foto Bersama DHOLPIN?</h3>
+          <p class="text-xs text-stone-500">Dari konsultasi konsep hingga penyerahan hasil akhir, semua berjalan praktis dan transparan.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Step 1 -->
+          <div class="relative p-6 rounded-2xl bg-dholpin-cream/70 border border-stone-200/80 frame-box-interactive">
+            <div class="w-10 h-10 rounded-xl bg-stone-900 text-amber-200 flex items-center justify-center font-bold text-sm mb-4">
+              01
+            </div>
+            <h4 class="font-serif text-base font-bold text-stone-900 mb-1.5">Booking & Konsultasi</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Hubungi via WhatsApp atau DM Instagram. Tentukan tanggal acara, jam, serta lokasi pemotretan yang diinginkan.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative p-6 rounded-2xl bg-dholpin-cream/70 border border-stone-200/80 frame-box-interactive">
+            <div class="w-10 h-10 rounded-xl bg-stone-900 text-amber-200 flex items-center justify-center font-bold text-sm mb-4">
+              02
+            </div>
+            <h4 class="font-serif text-base font-bold text-stone-900 mb-1.5">Moodboard & Outfit Guide</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Diskusikan referensi gaya Pinterest. Tim kami siap memberi masukan warna pakaian & properti agar hasil foto serasi.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative p-6 rounded-2xl bg-dholpin-cream/70 border border-stone-200/80 frame-box-interactive">
+            <div class="w-10 h-10 rounded-xl bg-stone-900 text-amber-200 flex items-center justify-center font-bold text-sm mb-4">
+              03
+            </div>
+            <h4 class="font-serif text-base font-bold text-stone-900 mb-1.5">Sesi Foto & Pose Guide</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Fotografer ramah memandu pose kamu secara rileks dan santai. Dijamin tidak akan mati gaya meski pemula!
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative p-6 rounded-2xl bg-dholpin-cream/70 border border-stone-200/80 frame-box-interactive">
+            <div class="w-10 h-10 rounded-xl bg-stone-900 text-amber-200 flex items-center justify-center font-bold text-sm mb-4">
+              04
+            </div>
+            <h4 class="font-serif text-base font-bold text-stone-900 mb-1.5">Editing & Serah Terima</h4>
+            <p class="text-xs text-stone-600 leading-relaxed">
+              Proses retouch & color grading 1–3 hari. Seluruh softcopy original + edit diserahkan via Google Drive aktif selamanya.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- WHAT'S INCLUDED / FASILITAS KLIEN -->
+      <div class="mb-20">
+        <div class="max-w-2xl mx-auto text-center space-y-3 mb-12">
+          <span class="text-xs font-bold uppercase tracking-widest text-dholpin-gold">Keuntungan Eksklusif</span>
+          <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900">Apa Saja yang Kamu Dapatkan di DHOLPIN?</h3>
+          <p class="text-xs text-stone-500">Standar layanan fotografi profesional dengan kenyamanan maksimal untuk setiap klien.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <div class="p-6 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-4 frame-box-interactive">
+            <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center shrink-0">
+              <i data-lucide="folder-archive" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-stone-900 mb-1">100% All Files Diberikan</h4>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Tidak ada biaya tersembunyi per lembar foto. Seluruh softcopy mentah/asli beresolusi tinggi kami berikan seutuhnya.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-4 frame-box-interactive">
+            <div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-700 flex items-center justify-center shrink-0">
+              <i data-lucide="sliders" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-stone-900 mb-1">Warm Pinterest Color Grading</h4>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Foto pilihan diedit dengan pencahayaan hangat, kontras lembut, dan tone vintage-modern yang memanjakan mata.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-4 frame-box-interactive">
+            <div class="w-11 h-11 rounded-xl bg-purple-50 text-purple-700 flex items-center justify-center shrink-0">
+              <i data-lucide="smile" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-stone-900 mb-1">Free Pose Coaching</h4>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Fotografer yang komunikatif dan sabar mengarahkan pose terbaik agar kamu tampil natural, percaya diri, & fotogenik.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-4 frame-box-interactive">
+            <div class="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0">
+              <i data-lucide="cloud-download" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-stone-900 mb-1">Google Drive Aktif Selamanya</h4>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                File tersimpan aman di Google Drive pribadi tanpa watermark, siap diunduh dan dibagikan kapan saja kamu butuhkan.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-4 frame-box-interactive">
+            <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-stone-900 mb-1">Pengerjaan Kilat 1–3 Hari</h4>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Tidak perlu menunggu berminggu-minggu. File preview dan hasil edit siap tayang di media sosial hanya dalam hitungan hari.
+              </p>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-stone-200/80 shadow-sm flex items-start gap-4 frame-box-interactive">
+            <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 flex items-center justify-center shrink-0">
+              <i data-lucide="map" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-stone-900 mb-1">Bebas Multiple Spot Foto</h4>
+              <p class="text-xs text-stone-600 leading-relaxed">
+                Selama durasi waktu berlangsung, kamu bebas berpindah ke berbagai sudut menarik di sekitar area lokasi acara.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- MERGED SHOWCASE GALLERY: CONTOH HASIL POTRET NYATA -->
+      <div>
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-dholpin-gold">Galeri Hasil Potret Nyata</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-stone-900 mt-1">
+              Inspirasi Karya & Momen Nyata yang Telah Diabadikan
+            </h3>
+            <p class="text-xs text-stone-500 mt-1">Klik pada foto untuk melihat detail resolusi dan konsultasi paket tersebut.</p>
+          </div>
+
+          <!-- Filter Tabs for Photography -->
+          <div class="flex flex-wrap items-center gap-2 bg-white p-1.5 rounded-full border border-stone-200/80 shadow-sm">
+            <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-stone-900 text-white shadow-md transition" data-filter="all">
+              Semua Potret
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-stone-100 text-stone-700 hover:bg-stone-200 transition" data-filter="wisuda">
+              Wisuda
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-stone-100 text-stone-700 hover:bg-stone-200 transition" data-filter="wedding">
+              Wedding
+            </button>
+            <button class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-stone-100 text-stone-700 hover:bg-stone-200 transition" data-filter="birthday">
+              Ulang Tahun
+            </button>
+          </div>
+        </div>
+
+        <!-- Portfolio Items Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolio-grid">
+          
+          <!-- Item 1: Wisuda Keluarga & Pasangan -->
+          <div class="portfolio-item frame-box-interactive group relative overflow-hidden rounded-3xl bg-white border border-stone-200 shadow-sm cursor-pointer" data-category="wisuda" data-title="Graduation Joy: Sarah & Family" data-tag="Fotografi Wisuda" data-desc="Sesi potret wisuda 60 menit dengan pose natural, buket bunga aesthetic, dan color grading hangat khas Pinterest." data-img="assets/images/portfolio-wisuda-1.jpg">
+            <a href="#" class="open-modal-trigger block">
+              <div class="aspect-[4/5] overflow-hidden">
+                <img src="assets/images/portfolio-wisuda-1.jpg" alt="Wisuda Sarah" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              </div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-2.5 py-1 rounded-md">Graduation Shoot</span>
+                <h4 class="font-serif text-lg font-bold text-stone-900 mt-2">Graduation Day: Sarah & Family</h4>
+                <p class="text-xs text-stone-500 mt-1">Paket 60 Menit • 250K</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Item 2: Wedding Intimate Vows -->
+          <div class="portfolio-item frame-box-interactive group relative overflow-hidden rounded-3xl bg-white border border-stone-200 shadow-sm cursor-pointer" data-category="wedding" data-title="The Intimate Wedding: Kevin & Jessica" data-tag="Fotografi Wedding" data-desc="Dokumentasi akad dan resepsi intim dengan tata cahaya natural dan momen haru yang tertangkap sempurna." data-img="assets/images/portfolio-wedding-1.jpg">
+            <a href="#" class="open-modal-trigger block">
+              <div class="aspect-[4/5] overflow-hidden">
+                <img src="assets/images/portfolio-wedding-1.jpg" alt="Wedding Kevin & Jessica" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              </div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">Wedding Shoot</span>
+                <h4 class="font-serif text-lg font-bold text-stone-900 mt-2">The Intimate Wedding</h4>
+                <p class="text-xs text-stone-500 mt-1">Paket Wedding • 300K</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Item 3: Birthday Celebration Candid -->
+          <div class="portfolio-item frame-box-interactive group relative overflow-hidden rounded-3xl bg-white border border-stone-200 shadow-sm cursor-pointer" data-category="birthday" data-title="Golden Hour Birthday Bash" data-tag="Fotografi Birthday" data-desc="Momen candid pesta ulang tahun di cafe, hangatnya tawa sahabat, dan tiup lilin bertabur lampu bokeh." data-img="assets/images/portfolio-birthday-1.jpg">
+            <a href="#" class="open-modal-trigger block">
+              <div class="aspect-[4/5] overflow-hidden">
+                <img src="assets/images/portfolio-birthday-1.jpg" alt="Birthday Party Shoot" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              </div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md">Birthday Shoot</span>
+                <h4 class="font-serif text-lg font-bold text-stone-900 mt-2">20th Birthday Celebration</h4>
+                <p class="text-xs text-stone-500 mt-1">Paket Birthday • 250K</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Item 4: Wisuda Solo Express -->
+          <div class="portfolio-item frame-box-interactive group relative overflow-hidden rounded-3xl bg-white border border-stone-200 shadow-sm cursor-pointer" data-category="wisuda" data-title="Solo Graduation Express" data-tag="Fotografi Wisuda" data-desc="Sesi wisuda express 30 menit, cocok untuk solo portrait dengan toga dan plakat kelulusan." data-img="assets/images/portfolio-wisuda-2.jpg">
+            <a href="#" class="open-modal-trigger block">
+              <div class="aspect-[4/5] overflow-hidden">
+                <img src="assets/images/portfolio-wisuda-2.jpg" alt="Solo Graduation Portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              </div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-2.5 py-1 rounded-md">Graduation Shoot</span>
+                <h4 class="font-serif text-lg font-bold text-stone-900 mt-2">Solo Graduation Express</h4>
+                <p class="text-xs text-stone-500 mt-1">Paket 30 Menit • 150K</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Item 5: Wedding Akad Sakral -->
+          <div class="portfolio-item frame-box-interactive group relative overflow-hidden rounded-3xl bg-white border border-stone-200 shadow-sm cursor-pointer" data-category="wedding" data-title="Akad Nikah Penuh Haru" data-tag="Fotografi Wedding" data-desc="Detail cincin kawin, ijab kabul, dan tatapan bahagia kedua mempelai dalam bingkai hangat abadi." data-img="assets/images/portfolio-wedding-2.jpg">
+            <a href="#" class="open-modal-trigger block">
+              <div class="aspect-[4/5] overflow-hidden">
+                <img src="assets/images/portfolio-wedding-2.jpg" alt="Akad Nikah" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              </div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">Wedding Shoot</span>
+                <h4 class="font-serif text-lg font-bold text-stone-900 mt-2">Akad Nikah Sakral</h4>
+                <p class="text-xs text-stone-500 mt-1">Paket Wedding • 300K</p>
+              </div>
+            </a>
+          </div>
+
+          <!-- Item 6: Birthday Cake & Besties -->
+          <div class="portfolio-item frame-box-interactive group relative overflow-hidden rounded-3xl bg-white border border-stone-200 shadow-sm cursor-pointer" data-category="birthday" data-title="Sweet 17th Party & Besties" data-tag="Fotografi Birthday" data-desc="Pesta kejutan dari sahabat dengan kue ulang tahun, lilin gemerlap, dan canda tawa hangat." data-img="assets/images/portfolio-birthday-2.jpg">
+            <a href="#" class="open-modal-trigger block">
+              <div class="aspect-[4/5] overflow-hidden">
+                <img src="assets/images/portfolio-birthday-2.jpg" alt="Sweet 17th Party" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+              </div>
+              <div class="p-5">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md">Birthday Shoot</span>
+                <h4 class="font-serif text-lg font-bold text-stone-900 mt-2">Sweet 17th Party & Besties</h4>
+                <p class="text-xs text-stone-500 mt-1">Paket Birthday • 250K</p>
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Tips & Guidance Banner for Clients -->
+        <div class="mt-12 p-6 sm:p-8 rounded-3xl bg-amber-50 border border-amber-200/80 flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div class="space-y-1 text-center sm:text-left">
+            <h4 class="font-serif text-lg font-bold text-stone-900 flex items-center justify-center sm:justify-start gap-2">
+              <i data-lucide="sparkles" class="w-4 h-4 text-dholpin-gold"></i> Tips Persiapan Sesi Foto DHOLPIN
+            </h4>
+            <p class="text-xs text-stone-600 max-w-xl">
+              Bebas membawa properti tambahan seperti buket bunga, selempang wisuda, balon foil, atau confetti. Jangan ragu mengajak keluarga & bestie berfoto tanpa biaya tambahan!
+            </p>
+          </div>
+          <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20mau%20konsultasi%20sesi%20foto%20dan%20tanya%20jadwal" target="_blank" class="shrink-0 px-6 py-3 bg-stone-900 hover:bg-stone-800 text-amber-200 rounded-2xl text-xs font-semibold shadow-md transition">
+            Konsultasi Jadwal Foto &rarr;
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PRICELIST SECTION (TRANSPARAN & LENGKAP) -->
+  <section id="pricelist" class="py-24 bg-gradient-to-b from-dholpin-sand/60 to-dholpin-cream border-t border-stone-200/90">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center space-y-4 mb-16">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-dholpin-charcoal text-dholpin-goldLight text-xs font-semibold shadow-md">
+          <i data-lucide="tag" class="w-3.5 h-3.5"></i> Pricelist Resmi DHOLPIN
+        </div>
+        
+        <h2 class="split-words font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 leading-tight">
+          Investasi Terjangkau untuk Kenangan Tak Ternilai
+        </h2>
+
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed">
+          Semua harga transparan tanpa biaya tersembunyi. Silakan pilih paket yang paling cocok dengan kebutuhan acaramu!
+        </p>
+
+        <!-- Limited Slot Alert Box -->
+        <div class="mt-6 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-900 max-w-xl mx-auto flex items-center justify-center gap-3 text-xs sm:text-sm font-medium">
+          <div class="w-8 h-8 rounded-xl bg-amber-500/20 text-amber-800 flex items-center justify-center shrink-0 border border-amber-500/30">
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-700"></i>
+          </div>
+          <span><strong>Slot terbatas setiap bulannya</strong>—yuk amankan tanggalmu sekarang sebelum kuota habis!</span>
+        </div>
+      </div>
+
+      <!-- PRICELIST CATEGORY 1: UNDANGAN DIGITAL WEB -->
+      <div class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center">
+            <i data-lucide="mail" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-serif text-2xl font-bold text-stone-900">Undangan Web Digital (Siap Online)</h3>
+            <p class="text-xs text-stone-500">Cocok untuk perayaan Pernikahan & Ulang Tahun</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Package 1: Pilihan Template (150K) -->
+          <div class="bg-white rounded-3xl p-8 border border-stone-200 shadow-md hover:shadow-xl transition flex flex-col justify-between frame-box-interactive">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 bg-stone-100 text-stone-700 text-xs font-bold rounded-full uppercase tracking-wider">Template Populer</span>
+                <span class="text-xs text-stone-400 font-medium">Aktif Selamanya</span>
+              </div>
+              <h4 class="font-serif text-2xl font-bold text-stone-900 mb-2">Pilihan Template</h4>
+              <p class="text-xs text-stone-600 mb-6">Pilih dari katalog template elegan kami yang sudah siap pakai dengan proses kilat.</p>
+              
+              <div class="mb-6 pb-6 border-b border-stone-100">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-xs text-stone-500 font-medium">Rp</span>
+                  <span class="text-4xl font-bold text-stone-900">150.000</span>
+                  <span class="text-xs text-stone-500">/ project</span>
+                </div>
+                <p class="text-[11px] text-amber-700 font-medium mt-1">Cocok untuk pernikahan & ulang tahun</p>
+              </div>
+
+              <!-- Inclusions -->
+              <ul class="space-y-3 text-xs text-stone-700 mb-8">
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Pilihan katalog tema estetik siap pakai</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Musik latar (Backsound otomatis)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Navigasi langsung Google Maps</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Form RSVP Kehadiran & Buku Tamu Ucapan</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Amplop Digital (Rekening & QRIS)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Countdown Timer hitung mundur</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600 shrink-0"></i>
+                  <span>Revisi teks & foto hingga fix</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20mau%20pesan%20Undangan%20Web%20Digital%20Paket%20Pilihan%20Template%20(150K)" target="_blank" class="block w-full text-center py-3.5 bg-stone-900 hover:bg-stone-800 text-white rounded-2xl font-semibold text-xs tracking-wide shadow-md transition">
+                Pilih Paket Template (150K) &rarr;
+              </a>
+            </div>
+          </div>
+
+          <!-- Package 2: Desain Full Custom (200K) - BEST VALUE -->
+          <div class="relative bg-white rounded-3xl p-8 border-2 border-amber-600/40 shadow-xl flex flex-col justify-between frame-box-interactive">
+            <!-- Best Seller Pill -->
+            <div class="absolute -top-3.5 right-6 bg-gradient-to-r from-amber-600 to-amber-700 text-white text-[10px] font-bold tracking-wider px-3.5 py-1 rounded-full uppercase shadow-md">
+              Paling Direkomendasikan
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full uppercase tracking-wider">Eksklusif 100% Bebas</span>
+                <span class="text-xs text-amber-700 font-semibold">VIP Experience</span>
+              </div>
+              <h4 class="font-serif text-2xl font-bold text-stone-900 mb-2">Desain Full Custom</h4>
+              <p class="text-xs text-stone-600 mb-6">Desain eksklusif dirancang khusus dari nol mengikuti konsep impian, moodboard, dan warna favoritmu.</p>
+              
+              <div class="mb-6 pb-6 border-b border-stone-100">
+                <div class="flex items-baseline gap-1">
+                  <span class="text-xs text-stone-500 font-medium">Rp</span>
+                  <span class="text-4xl font-bold text-amber-700">200.000</span>
+                  <span class="text-xs text-stone-500">/ project</span>
+                </div>
+                <p class="text-[11px] text-amber-700 font-medium mt-1">Cocok untuk pernikahan & ulang tahun</p>
+              </div>
+
+              <!-- Inclusions -->
+              <ul class="space-y-3 text-xs text-stone-700 mb-8">
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                  <span><strong>Desain 100% Custom</strong> mengikuti tema & request</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                  <span>Custom Color Palette & Typography</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                  <span>Galeri foto & video tanpa batas</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                  <span>Semua fitur: Musik, Maps, RSVP, Gift QRIS</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                  <span>Nama tamu undangan tak terbatas (Generate link otomatis)</span>
+                </li>
+                <li class="flex items-center gap-2.5">
+                  <i data-lucide="check-circle-2" class="w-4 h-4 text-amber-600 shrink-0"></i>
+                  <span>Prioritas pengerjaan & revisi lebih leluasa</span>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20mau%20pesan%20Undangan%20Web%20Digital%20Paket%20Desain%20Full%20Custom%20(200K)" target="_blank" class="block w-full text-center py-3.5 bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 hover:opacity-95 text-white rounded-2xl font-semibold text-xs tracking-wide shadow-lg transition">
+                Pilih Full Custom (200K) &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PRICELIST CATEGORY 2: PAKET FOTOGRAFI -->
+      <div>
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-10 h-10 rounded-xl bg-rose-100 text-rose-900 flex items-center justify-center">
+            <i data-lucide="camera" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <h3 class="font-serif text-2xl font-bold text-stone-900">Paket Fotografi Profesional</h3>
+            <p class="text-xs text-stone-500">Pernikahan, Wisuda, dan Ulang Tahun dengan Color Grading Pinterest</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Photo 1: Wisuda 30 Menit (150K) -->
+          <div class="bg-white rounded-3xl p-6 border border-stone-200 shadow-sm hover:shadow-md transition flex flex-col justify-between frame-box-interactive">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-2.5 py-1 rounded-md">Wisuda Express</span>
+              <h4 class="font-serif text-lg font-bold text-stone-900 mt-2 mb-1">Graduation / Wisuda</h4>
+              <p class="text-[11px] text-stone-500 mb-4">Sesi kilat hemat untuk foto solo & plakat kelulusan.</p>
+              
+              <div class="mb-4 pb-4 border-b border-stone-100">
+                <span class="text-xs text-stone-400">Durasi 30 Menit</span>
+                <div class="text-2xl font-bold text-stone-900 mt-0.5">150K</div>
+              </div>
+
+              <ul class="space-y-2 text-[11px] text-stone-600 mb-6">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Durasi 30 Menit sesi foto</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> All softcopy file Google Drive</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Selected edited photos</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Free arahan pose ramah</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20mau%20booking%20Fotografi%20Wisuda%2030%20Menit%20(150K)" target="_blank" class="block w-full py-2.5 text-center bg-stone-100 hover:bg-stone-900 hover:text-white rounded-xl text-xs font-semibold tracking-wide transition">
+              Book 150K &rarr;
+            </a>
+          </div>
+
+          <!-- Photo 2: Wisuda 60 Menit (250K) - BEST WISUDA -->
+          <div class="bg-white rounded-3xl p-6 border-2 border-stone-800 shadow-md flex flex-col justify-between relative frame-box-interactive">
+            <span class="absolute -top-3 right-4 bg-stone-900 text-amber-200 text-[9px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full">Best Value</span>
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-2.5 py-1 rounded-md">Wisuda Puas</span>
+              <h4 class="font-serif text-lg font-bold text-stone-900 mt-2 mb-1">Graduation / Wisuda</h4>
+              <p class="text-[11px] text-stone-500 mb-4">Sesi lengkap bersama keluarga, pasangan, & teman-teman.</p>
+              
+              <div class="mb-4 pb-4 border-b border-stone-100">
+                <span class="text-xs text-stone-400">Durasi 60 Menit</span>
+                <div class="text-2xl font-bold text-amber-700 mt-0.5">250K</div>
+              </div>
+
+              <ul class="space-y-2 text-[11px] text-stone-600 mb-6">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Durasi 60 Menit leluasa</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Multiple spot foto kampus</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Foto grup & keluarga bebas</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> All files + lebih banyak edit</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20mau%20booking%20Fotografi%20Wisuda%2060%20Menit%20(250K)" target="_blank" class="block w-full py-2.5 text-center bg-stone-900 text-amber-200 hover:bg-stone-800 rounded-xl text-xs font-semibold tracking-wide transition">
+              Book 250K &rarr;
+            </a>
+          </div>
+
+          <!-- Photo 3: Birthday (250K) -->
+          <div class="bg-white rounded-3xl p-6 border border-stone-200 shadow-sm hover:shadow-md transition flex flex-col justify-between frame-box-interactive">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-purple-700 bg-purple-50 px-2.5 py-1 rounded-md">Birthday Party</span>
+              <h4 class="font-serif text-lg font-bold text-stone-900 mt-2 mb-1">Birthday / Ulang Tahun</h4>
+              <p class="text-[11px] text-stone-500 mb-4">Liputan seru acara pesta, tiup lilin, dan momen candid kawan.</p>
+              
+              <div class="mb-4 pb-4 border-b border-stone-100">
+                <span class="text-xs text-stone-400">Paket Lengkap Event</span>
+                <div class="text-2xl font-bold text-stone-900 mt-0.5">250K</div>
+              </div>
+
+              <ul class="space-y-2 text-[11px] text-stone-600 mb-6">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Dokumentasi event & tiup lilin</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Candid tawa kawan & dekorasi</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> All softcopy original</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Tone warm retro / modern IG</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20mau%20booking%20Fotografi%20Birthday%20(250K)" target="_blank" class="block w-full py-2.5 text-center bg-stone-100 hover:bg-stone-900 hover:text-white rounded-xl text-xs font-semibold tracking-wide transition">
+              Book 250K &rarr;
+            </a>
+          </div>
+
+          <!-- Photo 4: Wedding / Pernikahan (300K) -->
+          <div class="bg-white rounded-3xl p-6 border border-stone-200 shadow-sm hover:shadow-md transition flex flex-col justify-between frame-box-interactive">
+            <div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-md">Intimate Wedding</span>
+              <h4 class="font-serif text-lg font-bold text-stone-900 mt-2 mb-1">Wedding / Pernikahan</h4>
+              <p class="text-[11px] text-stone-500 mb-4">Momen sakral janji suci pernikahan abadi dalam frame hangat.</p>
+              
+              <div class="mb-4 pb-4 border-b border-stone-100">
+                <span class="text-xs text-stone-400">Akad / Resepsi</span>
+                <div class="text-2xl font-bold text-stone-900 mt-0.5">300K</div>
+              </div>
+
+              <ul class="space-y-2 text-[11px] text-stone-600 mb-6">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Liputan intimate akad / resepsi</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Detail gaun, cincin, & dekorasi</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> All softcopy Google Drive</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i> Edited aesthetic highlight shots</li>
+              </ul>
+            </div>
+
+            <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20mau%20booking%20Fotografi%20Wedding%20(300K)" target="_blank" class="block w-full py-2.5 text-center bg-stone-100 hover:bg-stone-900 hover:text-white rounded-xl text-xs font-semibold tracking-wide transition">
+              Book 300K &rarr;
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS / CLIENT LOVE -->
+  <section class="py-24 bg-white border-y border-stone-200/80">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="max-w-2xl mx-auto text-center space-y-3 mb-16">
+        <span class="text-xs font-bold uppercase tracking-widest text-dholpin-gold">Cerita Klien DHOLPIN</span>
+        <h2 class="split-words font-serif text-3xl sm:text-4xl font-bold text-stone-900">
+          Mereka yang Telah Mempercayakan Momennya
+        </h2>
+        <p class="text-stone-500 text-xs sm:text-sm">Kepuasan dan senyum di hari bahagiamu adalah prioritas utama studio kami.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Testi 1 -->
+        <div class="p-7 rounded-3xl bg-dholpin-cream/70 border border-stone-200/90 shadow-sm flex flex-col justify-between frame-box-interactive">
+          <div class="space-y-4">
+            <div class="flex text-amber-500">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed italic">
+              "Pesan undangan web digital paket custom di DHOLPIN puas banget! Tamu-tamu nikahan pada muji desainnya mewah dan lagunya pas banget. Respon miminnya juga ramah pas minta revisi kecil."
+            </p>
+          </div>
+          <div class="pt-6 border-t border-stone-200/80 mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-200 text-stone-800 font-bold flex items-center justify-center text-xs">
+              AD
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-stone-900">Anisa & Dimas</h4>
+              <p class="text-[10px] text-stone-500">Klien Undangan Web Pernikahan</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testi 2 -->
+        <div class="p-7 rounded-3xl bg-dholpin-cream/70 border border-stone-200/90 shadow-sm flex flex-col justify-between frame-box-interactive">
+          <div class="space-y-4">
+            <div class="flex text-amber-500">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed italic">
+              "Buat mahasiswa yang mau wisuda, ambil paket 60 menit DHOLPIN wajib banget! Fotografernya asyik, ga canggung ngarahin pose. Hasil foto warnanya kayak di Pinterest, langsung auto upload feeds IG!"
+            </p>
+          </div>
+          <div class="pt-6 border-t border-stone-200/80 mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-rose-200 text-stone-800 font-bold flex items-center justify-center text-xs">
+              SK
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-stone-900">Sarah Khairunnisa, S.Ked</h4>
+              <p class="text-[10px] text-stone-500">Klien Fotografi Wisuda 60 Menit</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testi 3 -->
+        <div class="p-7 rounded-3xl bg-dholpin-cream/70 border border-stone-200/90 shadow-sm flex flex-col justify-between frame-box-interactive">
+          <div class="space-y-4">
+            <div class="flex text-amber-500">
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+              <i data-lucide="star" class="w-4 h-4 fill-current"></i>
+            </div>
+            <p class="text-xs text-stone-700 leading-relaxed italic">
+              "Ulang tahun sweet 17 kemarin di-handle DHOLPIN mulai dari undangan web sampai dokumentasi foto acaranya. Praktis satu pintu, harganya masuk kantong pelajar, hasilnya aesthetic abis!"
+            </p>
+          </div>
+          <div class="pt-6 border-t border-stone-200/80 mt-6 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-purple-200 text-stone-800 font-bold flex items-center justify-center text-xs">
+              VR
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-stone-900">Valerie Regina</h4>
+              <p class="text-[10px] text-stone-500">Klien Paket Birthday Lengkap</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION (TANYA JAWAB) -->
+  <section id="faq" class="py-24 bg-dholpin-cream">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <div class="text-center space-y-3 mb-14">
+        <span class="text-xs font-bold uppercase tracking-widest text-dholpin-gold">Pertanyaan Umum</span>
+        <h2 class="split-words font-serif text-3xl sm:text-4xl font-bold text-stone-900">
+          Hal yang Kerap Ditanyakan
+        </h2>
+        <p class="text-xs sm:text-sm text-stone-500">Punya pertanyaan lain? Jangan ragu hubungi kami via WhatsApp atau DM Instagram.</p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="group bg-white p-6 rounded-2xl border border-stone-200/80 transition shadow-sm open:shadow-md">
+          <summary class="flex justify-between items-center font-bold text-sm sm:text-base text-stone-900 cursor-pointer list-none">
+            <span>Berapa lama proses pembuatan Undangan Web Digital?</span>
+            <span class="text-dholpin-gold transition group-open:rotate-180">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </span>
+          </summary>
+          <p class="text-xs text-stone-600 mt-3 leading-relaxed border-t border-stone-100 pt-3">
+            Untuk <strong>Pilihan Template (150K)</strong> proses pengerjaan rata-rata 1–2 hari kerja setelah data lengkap diterima. Untuk <strong>Desain Full Custom (200K)</strong> sekitar 2–3 hari kerja dengan preview dan revisi hingga kamu puas.
+          </p>
+        </details>
+
+        <details class="group bg-white p-6 rounded-2xl border border-stone-200/80 transition shadow-sm open:shadow-md">
+          <summary class="flex justify-between items-center font-bold text-sm sm:text-base text-stone-900 cursor-pointer list-none">
+            <span>Apakah nama tamu undangan di link web bisa diganti-ganti?</span>
+            <span class="text-dholpin-gold transition group-open:rotate-180">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </span>
+          </summary>
+          <p class="text-xs text-stone-600 mt-3 leading-relaxed border-t border-stone-100 pt-3">
+            Tentu saja! Kami menyediakan fitur generator link nama tamu tanpa batas. Kamu bisa membagikan link khusus seperti <em>dholpin.me/wedding/dimas-anisa?to=Budi+Sekeluarga</em> sehingga terasa sangat personal dan elegan.
+          </p>
+        </details>
+
+        <details class="group bg-white p-6 rounded-2xl border border-stone-200/80 transition shadow-sm open:shadow-md">
+          <summary class="flex justify-between items-center font-bold text-sm sm:text-base text-stone-900 cursor-pointer list-none">
+            <span>Bagaimana cara booking jasa fotografi wisuda, wedding, atau ultah?</span>
+            <span class="text-dholpin-gold transition group-open:rotate-180">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </span>
+          </summary>
+          <p class="text-xs text-stone-600 mt-3 leading-relaxed border-t border-stone-100 pt-3">
+            Karena kuota per bulan kami terbatas, sangat disarankan untuk melakukan reservasi tanggal seawal mungkin. Cukup klik tombol WhatsApp, cantumkan tanggal dan lokasi acaramu, lalu tim DHOLPIN akan mencatat jadwalmu.
+          </p>
+        </details>
+
+        <details class="group bg-white p-6 rounded-2xl border border-stone-200/80 transition shadow-sm open:shadow-md">
+          <summary class="flex justify-between items-center font-bold text-sm sm:text-base text-stone-900 cursor-pointer list-none">
+            <span>Kapan dan lewat apa hasil foto dikirimkan?</span>
+            <span class="text-dholpin-gold transition group-open:rotate-180">
+              <i data-lucide="chevron-down" class="w-5 h-5"></i>
+            </span>
+          </summary>
+          <p class="text-xs text-stone-600 mt-3 leading-relaxed border-t border-stone-100 pt-3">
+            Seluruh file foto (original resolusi tinggi + foto terpilih yang telah diedit/color graded) akan dikirimkan melalui link Google Drive pribadi yang aktif, biasanya paling lambat 1–3 hari setelah sesi pemotretan.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DIRECT CONTACT & FORM CONSULTATION SECTION -->
+  <section id="kontak" class="py-24 bg-dholpin-sand/60 border-t border-stone-200/90 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left: Direct Social and Contact Info -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-dholpin-charcoal text-dholpin-goldLight text-xs font-semibold">
+            <i data-lucide="send" class="w-3.5 h-3.5"></i> Hubungi Kami Langsung
+          </div>
+
+          <h2 class="split-words font-serif text-3xl sm:text-4xl font-bold text-stone-900 leading-tight">
+            Konsultasikan Konsep & Amankan Tanggalmu Sekarang
+          </h2>
+
+          <p class="text-stone-600 text-xs sm:text-sm leading-relaxed">
+            Punya ide atau referensi khusus dari Pinterest? Ceritakan kepada kami. Tim DHOLPIN siap mewujudkannya dengan kualitas terbaik dan harga terjangkau.
+          </p>
+
+          <!-- Contact Channels Cards -->
+          <div class="space-y-4 pt-2">
+            
+            <!-- WhatsApp Official -->
+            <a href="https://wa.me/6285708454528?text=Halo%20DOLPHIN,%20saya%20mau%20diskusi%20projek%20acara%20saya" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-stone-200/90 hover:border-emerald-500/60 hover:shadow-lg transition-all duration-300 group frame-box-interactive">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-emerald-600 to-green-500 text-white flex items-center justify-center shrink-0 shadow-md shadow-emerald-500/20 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.828zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.174L2 22l4.981-1.396A9.94 9.94 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.637 0-3.155-.494-4.428-1.341l-.317-.213-2.973.833.823-2.906-.232-.338C3.967 14.898 3.5 13.504 3.5 12c0-4.687 3.813-8.5 8.5-8.5s8.5 3.813 8.5 8.5-3.813 8.5-8.5 8.5z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-stone-400 block">WhatsApp Resmi</span>
+                <h4 class="text-base font-bold text-stone-900 group-hover:text-emerald-600 transition flex items-center justify-between">
+                  <span>0857-0845-4528</span>
+                  <i data-lucide="arrow-up-right" class="w-4 h-4 text-stone-300 group-hover:text-emerald-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                </h4>
+                <p class="text-[11px] text-stone-500 mt-0.5">Respon cepat setiap hari untuk booking & tanya jawab</p>
+              </div>
+            </a>
+
+            <!-- Instagram Official -->
+            <a href="https://instagram.com/dolphin.dois" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white border border-stone-200/90 hover:border-pink-500/60 hover:shadow-lg transition-all duration-300 group frame-box-interactive">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-rose-500/20 group-hover:scale-110 transition-transform">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <span class="text-[11px] font-bold uppercase tracking-wider text-stone-400 block">Instagram DM</span>
+                <h4 class="text-base font-bold text-stone-900 group-hover:text-pink-600 transition flex items-center justify-between">
+                  <span>@dolphin.dois</span>
+                  <i data-lucide="arrow-up-right" class="w-4 h-4 text-stone-300 group-hover:text-pink-600 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+                </h4>
+                <p class="text-[11px] text-stone-500 mt-0.5">Lihat feed katalog & kirim referensi visual via DM</p>
+              </div>
+            </a>
+
+          </div>
+
+          <div class="pt-4 flex items-center gap-3 text-xs text-stone-500">
+            <i data-lucide="shield-check" class="w-5 h-5 text-dholpin-gold shrink-0"></i>
+            <span>Garansi revisi ramah & pendampingan hingga hari H acaramu sukses.</span>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Consultation Form with Direct WhatsApp Dispatch -->
+        <div class="lg:col-span-7">
+          <div class="bg-white p-8 sm:p-10 rounded-3xl border border-stone-200 shadow-xl">
+            <div class="mb-6">
+              <h3 class="font-serif text-2xl font-bold text-stone-900">Formulir Diskusi Projek</h3>
+              <p class="text-xs text-stone-500 mt-1">Isi detail acaramu, sistem akan otomatis menyiapkan pesan ke WhatsApp kami.</p>
+            </div>
+
+            <form id="consultation-form" class="space-y-4">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="form-name" class="block text-xs font-bold text-stone-700 mb-1.5">Nama Kamu / Pasangan *</label>
+                  <input type="text" id="form-name" required placeholder="Contoh: Sarah / Kevin" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-amber-600 bg-stone-50/50">
+                </div>
+
+                <div>
+                  <label for="form-service" class="block text-xs font-bold text-stone-700 mb-1.5">Pilih Layanan *</label>
+                  <select id="form-service" required class="w-full px-4 py-3 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-amber-600 bg-stone-50/50">
+                    <option value="Undangan Web - Pilihan Template (150K)">Undangan Web - Pilihan Template (150K)</option>
+                    <option value="Undangan Web - Desain Full Custom (200K)" selected>Undangan Web - Desain Full Custom (200K)</option>
+                    <option value="Fotografi - Wedding / Pernikahan (300K)">Fotografi - Wedding / Pernikahan (300K)</option>
+                    <option value="Fotografi - Wisuda 30 Menit (150K)">Fotografi - Wisuda 30 Menit (150K)</option>
+                    <option value="Fotografi - Wisuda 60 Menit (250K)">Fotografi - Wisuda 60 Menit (250K)</option>
+                    <option value="Fotografi - Birthday / Ulang Tahun (250K)">Fotografi - Birthday / Ulang Tahun (250K)</option>
+                    <option value="Paket Combo: Undangan Web + Fotografi">Paket Combo: Undangan Web + Fotografi</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="form-date" class="block text-xs font-bold text-stone-700 mb-1.5">Perkiraan Tanggal Acara</label>
+                <input type="text" id="form-date" placeholder="Contoh: 15 Juli 2026 atau Akhir Tahun" class="w-full px-4 py-3 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-amber-600 bg-stone-50/50">
+              </div>
+
+              <div>
+                <label for="form-note" class="block text-xs font-bold text-stone-700 mb-1.5">Catatan Tambahan / Request Khusus</label>
+                <textarea id="form-note" rows="3" placeholder="Tuliskan tema warna yang diinginkan, lokasi pemotretan, atau referensi Pinterest..." class="w-full px-4 py-3 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-amber-600 bg-stone-50/50"></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="w-full py-4 bg-dholpin-charcoal hover:bg-stone-800 text-dholpin-goldLight rounded-2xl font-bold text-xs tracking-wider uppercase shadow-lg transition duration-300 flex items-center justify-center gap-2">
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  Kirim & Diskusikan via WhatsApp Sekarang
+                </button>
+              </div>
+
+              <p class="text-center text-[11px] text-stone-400">
+                Pesan akan langsung diarahkan ke nomor WA <strong>0857-0845-4528</strong> tanpa registrasi.
+              </p>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-stone-950 text-stone-300 pt-16 pb-12 border-t border-stone-800">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-stone-800">
+        
+        <!-- Brand Info with Official Store Logo -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-amber-400/50 shadow-lg bg-[#FAF7F2] shrink-0 p-1 flex items-center justify-center">
+              <img src="assets/logo-emblem.png" alt="DOLPHIN Logo" class="w-full h-full object-contain">
+            </div>
+            <div>
+              <span class="font-serif text-2xl font-bold tracking-wider text-white block leading-none">DOLPHIN</span>
+              <span class="block text-[9px] uppercase tracking-widest text-amber-400 font-semibold mt-1">Digital Invitations & Photography</span>
+            </div>
+          </div>
+          <p class="text-xs text-stone-400 max-w-sm leading-relaxed">
+            Layanan terpercaya pembuatan undangan web digital interaktif custom serta jasa fotografi berkelas untuk pernikahan, wisuda, dan ulang tahun.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <a href="https://instagram.com/dolphin.dois" target="_blank" class="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 flex items-center justify-center text-stone-300 hover:text-white hover:border-pink-500 hover:bg-gradient-to-tr hover:from-amber-500 hover:via-rose-500 hover:to-purple-600 transition group" aria-label="Instagram">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://wa.me/6285708454528" target="_blank" class="w-9 h-9 rounded-full bg-stone-900 border border-stone-700 flex items-center justify-center text-stone-300 hover:text-white hover:border-emerald-500 hover:bg-emerald-600 transition group" aria-label="WhatsApp">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.588-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.828zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.174L2 22l4.981-1.396A9.94 9.94 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.637 0-3.155-.494-4.428-1.341l-.317-.213-2.973.833.823-2.906-.232-.338C3.967 14.898 3.5 13.504 3.5 12c0-4.687 3.813-8.5 8.5-8.5s8.5 3.813 8.5 8.5-3.813 8.5-8.5 8.5z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Daftar Layanan</h4>
+          <ul class="space-y-2 text-xs text-stone-400">
+            <li><a href="#undangan-digital" class="hover:text-amber-300 transition">Undangan Template (150K)</a></li>
+            <li><a href="#undangan-digital" class="hover:text-amber-300 transition">Undangan Full Custom (200K)</a></li>
+            <li><a href="#fotografi" class="hover:text-amber-300 transition">Fotografi Wedding (300K)</a></li>
+            <li><a href="#fotografi" class="hover:text-amber-300 transition">Fotografi Wisuda 30m / 60m (150K / 250K)</a></li>
+            <li><a href="#fotografi" class="hover:text-amber-300 transition">Fotografi Birthday (250K)</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Summary -->
+        <div class="md:col-span-4 space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-white">Hubungi Kami</h4>
+          <p class="text-xs text-stone-400 leading-relaxed">
+            <strong>Instagram:</strong> <a href="https://instagram.com/dolphin.dois" target="_blank" class="text-amber-300 hover:underline">@dolphin.dois</a><br>
+            <strong>WhatsApp:</strong> <a href="https://wa.me/6285708454528" target="_blank" class="text-amber-300 hover:underline">0857-0845-4528</a><br>
+            <strong>Status Booking:</strong> <span class="text-emerald-400 font-semibold">● Slot Terbatas Buka</span>
+          </p>
+          <div class="p-3 bg-stone-900/90 rounded-xl border border-stone-800 text-[11px] text-stone-300 flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-400 shrink-0"></i>
+            <span><em>"Slot terbatas setiap bulannya—yuk amankan tanggalmu sekarang!"</em></span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
+        <p>&copy; 2026 <strong>DHOLPIN Creative Studio</strong>. All rights reserved.</p>
+        <p>Crafted with love for your memorable moments.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL FOR PORTFOLIO DETAIL -->
+  <div id="portfolio-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative animate-float-none">
+      <button id="modal-close" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-stone-900/60 text-white flex items-center justify-center hover:bg-stone-900 transition" aria-label="Tutup Detail">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+      <div class="aspect-[16/10] bg-stone-100 overflow-hidden relative">
+        <img id="modal-img" src="" alt="Detail Portofolio" class="w-full h-full object-cover">
+      </div>
+      <div class="p-6 space-y-3">
+        <span id="modal-tag" class="text-[10px] font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-2.5 py-1 rounded-md">Portofolio</span>
+        <h3 id="modal-title" class="font-serif text-2xl font-bold text-stone-900">Judul Karya</h3>
+        <p id="modal-desc" class="text-xs text-stone-600 leading-relaxed">Deskripsi karya dan layanan.</p>
+        <div class="pt-4 flex items-center justify-end gap-3 border-t border-stone-100">
+          <a id="modal-action-btn" href="#" target="_blank" class="px-5 py-2.5 bg-dholpin-charcoal text-dholpin-goldLight rounded-xl text-xs font-semibold hover:bg-stone-800 transition flex items-center gap-1.5">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> Tanya Paket Ini via WA
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE DIGITAL INVITATION SIMULATOR MODAL -->
+  <div id="invitation-sim-modal" class="fixed inset-0 z-50 hidden items-center justify-center modal-backdrop p-4">
+    <div class="relative w-full max-w-sm sm:max-w-md bg-stone-950 rounded-[44px] p-4 shadow-2xl border-4 border-stone-800">
+      
+      <!-- Close Button -->
+      <button id="sim-modal-close" class="absolute -top-4 -right-4 z-20 w-10 h-10 rounded-full bg-stone-900 text-white flex items-center justify-center border border-stone-700 shadow-xl hover:bg-stone-800 transition">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Simulated Smartphone Notch & Screen -->
+      <div class="relative rounded-[32px] overflow-hidden bg-dholpin-cream text-stone-900 h-[650px] overflow-y-auto" data-lenis-prevent>
+        
+        <!-- Simulation Header Bar -->
+        <div class="sticky top-0 z-20 bg-stone-900 text-stone-200 px-4 py-2 flex items-center justify-between text-[11px]">
+          <span class="flex items-center gap-1.5 text-amber-300 font-medium">
+            <i data-lucide="lock" class="w-3 h-3"></i> dholpin.me/wedding/dimas-anisa
+          </span>
+          <span class="text-[10px] text-stone-400">Live Preview</span>
+        </div>
+
+        <!-- Cover Envelope Screen -->
+        <div class="relative p-6 text-center space-y-4 pt-12 pb-16 bg-gradient-to-b from-amber-50 to-dholpin-cream">
+          <span class="text-[10px] uppercase tracking-widest text-dholpin-gold font-bold">The Wedding Of</span>
+          <h2 class="font-serif text-3xl font-bold text-stone-900">Dimas & Anisa</h2>
+          <p class="font-cormorant italic text-sm text-stone-500">"Dan di antara tanda-tanda kebesaran-Nya..."</p>
+          
+          <div class="w-44 h-44 mx-auto rounded-full overflow-hidden border-4 border-amber-200/80 shadow-lg my-4">
+            <img src="assets/images/hero-invite.jpg" alt="Couple" class="w-full h-full object-cover">
+          </div>
+
+          <div class="bg-white/80 backdrop-blur p-4 rounded-2xl border border-stone-200/80 text-xs text-stone-600 shadow-sm">
+            <p class="text-[10px] text-stone-400">Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+            <p class="font-bold text-sm text-stone-900 mt-1">Tamu Undangan Terhormat</p>
+            <p class="text-[10px] text-stone-500 mt-1">Kami mengundang Anda untuk hadir di momen bahagia kami.</p>
+          </div>
+
+          <!-- Countdown Simulator -->
+          <div class="grid grid-cols-4 gap-2 pt-2">
+            <div class="bg-white p-2 rounded-xl border border-stone-200 text-center">
+              <span class="font-bold text-base text-stone-900">32</span>
+              <span class="block text-[9px] text-stone-500">Hari</span>
+            </div>
+            <div class="bg-white p-2 rounded-xl border border-stone-200 text-center">
+              <span class="font-bold text-base text-stone-900">14</span>
+              <span class="block text-[9px] text-stone-500">Jam</span>
+            </div>
+            <div class="bg-white p-2 rounded-xl border border-stone-200 text-center">
+              <span class="font-bold text-base text-stone-900">45</span>
+              <span class="block text-[9px] text-stone-500">Menit</span>
+            </div>
+            <div class="bg-white p-2 rounded-xl border border-stone-200 text-center">
+              <span class="font-bold text-base text-stone-900">10</span>
+              <span class="block text-[9px] text-stone-500">Detik</span>
+            </div>
+          </div>
+
+          <!-- Interactive Action Buttons -->
+          <div class="space-y-2 pt-4">
+            <a href="https://wa.me/6285708454528?text=Halo%20DHOLPIN,%20saya%20tertarik%20bikin%20undangan%20seperti%20demo%20preview" target="_blank" class="block w-full py-3 bg-dholpin-charcoal text-dholpin-goldLight rounded-xl text-xs font-bold shadow-md hover:bg-stone-800 transition">
+              Pesan Undangan Seperti Ini (Mulai 150K)
+            </a>
+            <p class="text-[10px] text-stone-400">Template responsif, musik otomatis, buku tamu & gift amplop digital.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="js/main.js"></script>
+</body>
+</html>
